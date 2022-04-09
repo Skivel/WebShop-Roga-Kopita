@@ -1,6 +1,6 @@
 {% load static %}
 <!-- HEADER -->
-<header>
+<header class="UA">
     <!-- top Header -->
     <div id="top-header">
         <div class="container">
@@ -9,7 +9,7 @@
             </div>
             <div class="pull-right">
                 <ul class="header-top-links">
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="/about">FAQ</a></li>
                     <li class="dropdown default-dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">UA <i
                                 class="fa fa-caret-down"></i></a>
@@ -72,7 +72,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             <div class="header-btns-icon">
                                 <i class="fa fa-shopping-cart"></i>
-                                <span class="qty">3</span>
+                                <span class="qty">2</span>
                             </div>
                             <strong class="text-uppercase">Корзина:</strong>
                             <br>
@@ -103,8 +103,8 @@
                                     </div>
                                 </div>
                                 <div class="shopping-cart-btns">
-                                    <button class="main-btn">View Cart</button>
-                                    <button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i>
+                                    <button class="main-btn">Корзина</button>
+                                    <button class="primary-btn">Купити <i class="fa fa-arrow-circle-right"></i>
                                     </button>
                                 </div>
                             </div>
@@ -133,10 +133,11 @@
         <div id="responsive-nav">
             <!-- category nav -->
             <div class="category-nav show-on-click">
-                <span class="category-header">Categories <i class="fa fa-list"></i></span>
+                <span class="category-header">Категорії <i class="fa fa-list"></i></span>
                 <ul class="category-list">
+                    <li><a href="#">Новини</a></li>
                     <li class="dropdown side-dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Women’s Clothing <i
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Взуття <i
                                 class="fa fa-angle-right"></i></a>
                         <div class="custom-menu">
                             <div class="row">
@@ -190,9 +191,8 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="#">Men’s Clothing</a></li>
                     <li class="dropdown side-dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
-                                                          aria-expanded="true">Phones & Accessories <i
+                                                          aria-expanded="true">Одяг <i
                             class="fa fa-angle-right"></i></a>
                         <div class="custom-menu">
                             <div class="row">
@@ -250,8 +250,8 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="#">Computer & Office</a></li>
-                    <li><a href="#">Consumer Electronics</a></li>
+                    <li><a href="#">Тактичне спорядження</a></li>
+                    <li><a href="#">Обладнання та фурнітура</a></li>
                     <li class="dropdown side-dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Jewelry & Watches <i
                                 class="fa fa-angle-right"></i></a>
@@ -325,7 +325,7 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="#">Bags & Shoes</a></li>
+                    <li><a href="#">Матеріали</a></li>
                     <li><a href="#">View All</a></li>
                 </ul>
             </div>
@@ -335,10 +335,10 @@
             <div class="menu-nav">
                 <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
                 <ul class="menu-list">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
+                    <li><a href="../">Головна</a></li>
+                    <li><a href="/shop">Магазин</a></li>
                     <li class="dropdown mega-dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
-                                                          aria-expanded="true">Women <i
+                                                          aria-expanded="true">Туризм <i
                             class="fa fa-caret-down"></i></a>
                         <div class="custom-menu">
                             <div class="row">
@@ -393,7 +393,7 @@
                         </div>
                     </li>
                     <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown"
-                                                                     aria-expanded="true">Men <i
+                                                                     aria-expanded="true">Полювання <i
                             class="fa fa-caret-down"></i></a>
                         <div class="custom-menu">
                             <div class="row">
@@ -480,16 +480,7 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="#">Sales</a></li>
-                    <li class="dropdown default-dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
-                                                             aria-expanded="true">Pages <i class="fa fa-caret-down"></i></a>
-                        <ul class="custom-menu">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="products.html">Products</a></li>
-                            <li><a href="product-page.html">Product Details</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#">Знижки</a></li>
                 </ul>
             </div>
             <!-- menu nav -->
@@ -498,14 +489,4 @@
     <!-- /container -->
 </div>
 <!-- /NAVIGATION -->
-
-<!-- BREADCRUMB -->
-<div id="breadcrumb">
-    <div class="container">
-        <ul class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li class="active">Products</li>
-        </ul>
-    </div>
-</div>
-<!-- /BREADCRUMB -->
+{% include 'main/breadcrumb.html' %}
