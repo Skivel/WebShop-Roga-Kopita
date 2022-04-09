@@ -29,8 +29,9 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# Later add auth APP
 INSTALLED_APPS = [
+    'news',
     'main',
     'django.contrib.admin',
     'django.contrib.auth',
