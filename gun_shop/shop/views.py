@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 
-def index(request):
-    return render(request, 'main/index.html')
+def shop(request):
+    return render(request, 'shop/shop.html')
 
 
 def about(request):
