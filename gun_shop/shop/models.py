@@ -1,13 +1,25 @@
 from django.db import models
+import PIL
 
+class Products(models.Model):
+    TOURISM = 'tourism'
+    HUNT = 'hunt'
 
-class Categories(models.Model):
-    title = models.CharField('Назва категорії', max_length=255)
-    slug = models.SlugField(max_length=55)
+    CHOICE_GROUP = {
+        (TOURISM, 'Туризм'),
+        (HUNT, 'Полювання')
+    }
+
+    title = models.CharField('Назва товару', max_length=255)
+    description = models.TextField('Опис')
+    price = models.IntegerField('Ціна')
+    vanish = models.BooleanField(default=False)
+    img = models.ImageField(default='{% static "main/img/banner04.jpg" %}', upload_to='{% static "main/img" %}')
+    group = models.CharField(max_length=20, choices=CHOICE_GROUP, default=None)
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name = "Категорія"
-        verbose_name_plural = "Категорії"
+        verbose_name = "Товар"
+        verbose_name_plural = "Товари"
