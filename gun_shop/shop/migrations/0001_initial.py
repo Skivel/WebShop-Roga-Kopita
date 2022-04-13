@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('description', models.TextField(verbose_name='Опис')),
                 ('price', models.IntegerField(verbose_name='Ціна')),
                 ('vanish', models.BooleanField(default=False)),
-                ('img', models.ImageField(default='{% static "main/img/logo.jpg" %}', upload_to='static/main/img/products')),
+                ('img', models.ImageField(default='{% static "main/img/logo.jpg" %}', upload_to='static/main/img/cart')),
                 ('group', models.CharField(choices=[('tourism', 'Туризм'), ('hunt', 'Полювання')], default='Other', max_length=20)),
             ],
             options={
