@@ -1,6 +1,7 @@
 from django.db import models
 import PIL
 
+
 class Products(models.Model):
     TOURISM = 'tourism'
     HUNT = 'hunt'
@@ -14,8 +15,8 @@ class Products(models.Model):
     description = models.TextField('Опис')
     price = models.IntegerField('Ціна')
     vanish = models.BooleanField(default=False)
-    img = models.ImageField(default='{% static "main/img/banner04.jpg" %}', upload_to='{% static "main/img" %}')
-    group = models.CharField(max_length=20, choices=CHOICE_GROUP, default=None)
+    img = models.ImageField(default='{% static "main/img/logo.jpg" %}', upload_to="static/main/img/products")
+    group = models.CharField(max_length=20, choices=CHOICE_GROUP, default="Other")
 
     def __str__(self):
         return self.title
