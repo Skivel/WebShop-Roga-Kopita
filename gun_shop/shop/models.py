@@ -1,21 +1,24 @@
 from django.db import models
-import PIL
 
 
 class Products(models.Model):
     TOURISM = 'tourism'
     HUNT = 'hunt'
+    SHOES = 'shoes'
+    CLOSES = 'closes'
 
     CHOICE_GROUP = {
         (TOURISM, 'Туризм'),
-        (HUNT, 'Полювання')
+        (HUNT, 'Полювання'),
+        (SHOES, 'Взуття'),
+        (CLOSES, 'Одяг')
     }
 
     title = models.CharField('Назва товару', max_length=255)
     description = models.TextField('Опис')
     price = models.IntegerField('Ціна')
     vanish = models.BooleanField(default=False)
-    img = models.ImageField(default='{% static "main/img/logo.jpg" %}', upload_to="static/main/img/cart")
+    img = models.ImageField(upload_to="static/shop/img/products")
     group = models.CharField(max_length=20, choices=CHOICE_GROUP, default="Other")
 
     def __str__(self):
