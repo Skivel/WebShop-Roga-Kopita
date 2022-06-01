@@ -5,31 +5,45 @@
 {% include "main/nav.html"%}
 
 
-<div class="col-md-9 col-sm-6 col-xs-6">
-    <div class="row">
-        <div id="product-slick-1" class="product-slick">
-            <!-- Product Single -->
-            {% if products %}
-            {% for el in products %}
-            <div class="product product-single">
-                <div class="product-thumb">
-                    <div class="product-label">
-                        <span>New</span>
-                    </div>
-                    <img src="{{ el.img.url }}" alt="">
+<!-- row -->
+<div class="row" style="margin-left:17%; margin-right:17%; margin-top:20px;">
+    {% if products %}
+    {% for el in products %}
+    <!-- Product Single -->
+    <div class="col-md-4 col-sm-6 col-xs-6">
+        <div class="product product-single">
+            <div class="product-thumb">
+                <div class="product-label">
+                    <span>New</span>
+                    <span class="sale">-20%</span>
                 </div>
-                <div class="product-body">
-                    <h3 class="product-price">{{ el.price }}$</h3>
-                    <h2 class="product-name"><a href="#">{{ el.title }}</a></h2>
-                    <div class="product-btns">
-                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                    </div>
+                <img src="{{ el.img.url }}" alt="">
+            </div>
+            <div class="product-body">
+                <h3 class="product-price">${{ el.price }}</h3>
+                <h2 class="product-name"><a href="#">{{ el.title }}</a></h2>
+                <div class="product-btns">
+                    <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                 </div>
             </div>
-            {% endfor %}
-            {% endif %}
-            <!-- /Product Single -->
         </div>
     </div>
+    <!-- /Product Single -->
+    <div class="clearfix visible-sm visible-xs"></div>
+    {% endfor %}
+    {% endif %}
+
+    <div class="clearfix visible-md visible-lg"></div>
+
+
+    <div class="clearfix visible-sm visible-xs"></div>
+
+
+    <div class="clearfix visible-md visible-lg visible-sm visible-xs"></div>
+
+
+    <div class="clearfix visible-sm visible-xs"></div>
+
 </div>
+<!-- /row -->
 {% endblock %}
