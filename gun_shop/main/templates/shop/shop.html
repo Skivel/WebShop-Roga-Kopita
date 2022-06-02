@@ -4,105 +4,125 @@
 {% block head %}
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{% static 'shop/css/button.css' %}">
+<link rel="stylesheet" href="{% static 'shop/css/buttons.css' %}">
 {% endblock %}
 
 {% block content %}
 
 {% include "main/nav.html"%}
 
-<div class="frame">
-  <button type="submit" class="custom-btn btn-9" onclick="all()">Усі товари</button>
-  <button type="submit" class="custom-btn btn-9" onclick="tourism()">Туризм</button>
-  <button type="submit" class="custom-btn btn-9" onclick="hunt()">Полювання</button>
-  <button type="submit" class="custom-btn btn-9" onclick="shoes()">Взуття</button>
-  <button type="submit" class="custom-btn btn-9" onclick="close()">Одяг</button>
+<div id="container" class="container">
+    <div id="tabs" class="tabs-container">
+
+        <div class="tabs" style="margin-left:12%; margin-right:12%; margin-top:20px;">
+            <a id="tab1" data-tab="1" class="tab custom-btn btn-9">Усі товари</a>
+            <a id="tab2" data-tab="2" class="tab custom-btn btn-9">Туризм</a>
+            <a id="tab3" data-tab="3" class="tab custom-btn btn-9">Полювання</a>
+            <a id="tab4" data-tab="4" class="tab custom-btn btn-9">Взуття</a>
+            <a id="tab5" data-tab="5" class="tab custom-btn btn-9">Одяг</a>
+        </div>
+
+        <div class="content">
+            <div id="tabcontent1" data-tab="1" class="tabcontent">
+                {% if products %}
+                {% for el in products %}
+                <!-- Product Single -->
+                {% include 'shop/single-product.html' %}
+                <!-- /Product Single -->
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div id="tabcontent2" data-tab="2" class="tabcontent">
+                {% if products %}
+                {% for el in products %}
+                {% if el.group == "tourism" %}
+                <!-- Product Single -->
+                {% include 'shop/single-product.html' %}
+                <!-- /Product Single -->
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div id="tabcontent3" data-tab="3" class="tabcontent">
+                {% if products %}
+                {% for el in products %}
+                {% if el.group == "hunt" %}
+                <!-- Product Single -->
+                {% include 'shop/single-product.html' %}
+                <!-- /Product Single -->
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div id="tabcontent4" data-tab="4" class="tabcontent">
+                {% if products %}
+                {% for el in products %}
+                {% if el.group == "shoes" %}
+                <!-- Product Single -->
+                {% include 'shop/single-product.html' %}
+                <!-- /Product Single -->
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div id="tabcontent5" data-tab="5" class="tabcontent">
+                {% if products %}
+                {% for el in products %}
+                {% if el.group == "closes" %}
+                <!-- Product Single -->
+                {% include 'shop/single-product.html' %}
+                <!-- /Product Single -->
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
-<!-- row -->
-<div id="list" class="row" style="margin-left:17%; margin-right:17%; margin-top:20px;">
-    {% if products %}
-    {% for el in products %}
-    {% if el.group == "tourism" %}
-    <!-- Product Single -->
-    <div class="col-md-4 col-sm-6 col-xs-6">
-        <div class="product product-single">
-            <div class="product-thumb">
-                <div class="product-label">
-                    <span>New</span>
-                    <span class="sale">-20%</span>
-                </div>
-                <img src="{{ el.img.url }}" alt="">
-            </div>
-            <div class="product-body">
-                <h3 class="product-price">${{ el.price }}</h3>
-                <h2 class="product-name"><a href="#">{{ el.title }}</a></h2>
-                <div class="product-btns">
-                    <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Product Single -->
-    {% elif el.group == "hunt" %}
-    <!-- Product Single -->
-    <div class="col-md-4 col-sm-6 col-xs-6">
-        <div class="product product-single">
-            <div class="product-thumb">
-                <div class="product-label">
-                    <span>New</span>
-                    <span class="sale">-20%</span>
-                </div>
-                <img src="{{ el.img.url }}" alt="">
-            </div>
-            <div class="product-body">
-                <h3 class="product-price">${{ el.price }}</h3>
-                <h2 class="product-name"><a href="#">{{ el.title }}</a></h2>
-                <div class="product-btns">
-                    <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Product Single -->
-    {% elif el.group == "shoes" %}
-    <!-- Product Single -->
-    <div class="col-md-4 col-sm-6 col-xs-6">
-        <div class="product product-single">
-            <div class="product-thumb">
-                <div class="product-label">
-                    <span>New</span>
-                    <span class="sale">-20%</span>
-                </div>
-                <img src="{{ el.img.url }}" alt="">
-            </div>
-            <div class="product-body">
-                <h3 class="product-price">${{ el.price }}</h3>
-                <h2 class="product-name"><a href="#">{{ el.title }}</a></h2>
-                <div class="product-btns">
-                    <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Product Single -->
-    {% else %}
-    <div class="clearfix visible-sm visible-xs"></div>
-    {% endif %}
-    {% endfor %}
-    {% endif %}
-
-    <div class="clearfix visible-md visible-lg"></div>
+<div class="clearfix visible-md visible-lg"></div>
 
 
-    <div class="clearfix visible-sm visible-xs"></div>
+<div class="clearfix visible-sm visible-xs"></div>
 
 
-    <div class="clearfix visible-md visible-lg visible-sm visible-xs"></div>
+<div class="clearfix visible-md visible-lg visible-sm visible-xs"></div>
 
 
-    <div class="clearfix visible-sm visible-xs"></div>
+<div class="clearfix visible-sm visible-xs"></div>
 
 </div>
-<!-- /row -->
+
+<script>
+    // DOM Elements
+const tabs = document.querySelectorAll('.tab')
+const tabContents = document.querySelectorAll('.tabcontent')
+
+// Functions
+const activateTab = tabnum => {
+
+    tabs.forEach( tab => {
+      tab.classList.remove('active')
+    })
+
+    tabContents.forEach( tabContent => {
+        tabContent.classList.remove('active')
+    })
+
+    document.querySelector('#tab' + tabnum).classList.add('active')
+    document.querySelector('#tabcontent' + tabnum).classList.add('active')
+    localStorage.setItem('jstabs-opentab', JSON.stringify(tabnum))
+
+}
+// Event Listeners
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        activateTab(tab.dataset.tab)
+    })
+})
+activateTab(opentab);
+
+</script>
 {% endblock %}
