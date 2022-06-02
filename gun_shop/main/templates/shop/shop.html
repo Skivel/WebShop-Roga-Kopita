@@ -1,14 +1,29 @@
 {% extends "main/loyaut.html" %}
 {% load static %}
 
+{% block head %}
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'shop/css/button.css' %}">
+{% endblock %}
+
 {% block content %}
+
 {% include "main/nav.html"%}
 
+<div class="frame">
+  <button type="submit" class="custom-btn btn-9" onclick="all()">Усі товари</button>
+  <button type="submit" class="custom-btn btn-9" onclick="tourism()">Туризм</button>
+  <button type="submit" class="custom-btn btn-9" onclick="hunt()">Полювання</button>
+  <button type="submit" class="custom-btn btn-9" onclick="shoes()">Взуття</button>
+  <button type="submit" class="custom-btn btn-9" onclick="close()">Одяг</button>
+</div>
 
 <!-- row -->
-<div class="row" style="margin-left:17%; margin-right:17%; margin-top:20px;">
+<div id="list" class="row" style="margin-left:17%; margin-right:17%; margin-top:20px;">
     {% if products %}
     {% for el in products %}
+    {% if el.group == "tourism" %}
     <!-- Product Single -->
     <div class="col-md-4 col-sm-6 col-xs-6">
         <div class="product product-single">
@@ -29,7 +44,51 @@
         </div>
     </div>
     <!-- /Product Single -->
+    {% elif el.group == "hunt" %}
+    <!-- Product Single -->
+    <div class="col-md-4 col-sm-6 col-xs-6">
+        <div class="product product-single">
+            <div class="product-thumb">
+                <div class="product-label">
+                    <span>New</span>
+                    <span class="sale">-20%</span>
+                </div>
+                <img src="{{ el.img.url }}" alt="">
+            </div>
+            <div class="product-body">
+                <h3 class="product-price">${{ el.price }}</h3>
+                <h2 class="product-name"><a href="#">{{ el.title }}</a></h2>
+                <div class="product-btns">
+                    <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Product Single -->
+    {% elif el.group == "shoes" %}
+    <!-- Product Single -->
+    <div class="col-md-4 col-sm-6 col-xs-6">
+        <div class="product product-single">
+            <div class="product-thumb">
+                <div class="product-label">
+                    <span>New</span>
+                    <span class="sale">-20%</span>
+                </div>
+                <img src="{{ el.img.url }}" alt="">
+            </div>
+            <div class="product-body">
+                <h3 class="product-price">${{ el.price }}</h3>
+                <h2 class="product-name"><a href="#">{{ el.title }}</a></h2>
+                <div class="product-btns">
+                    <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Product Single -->
+    {% else %}
     <div class="clearfix visible-sm visible-xs"></div>
+    {% endif %}
     {% endfor %}
     {% endif %}
 
