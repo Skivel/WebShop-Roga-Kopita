@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from gun_shop.main import views
 
 urlpatterns = [
     path('', views.index),

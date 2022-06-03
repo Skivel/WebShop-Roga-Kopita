@@ -82,19 +82,6 @@
 
 </div>
 
-<div class="clearfix visible-md visible-lg"></div>
-
-
-<div class="clearfix visible-sm visible-xs"></div>
-
-
-<div class="clearfix visible-md visible-lg visible-sm visible-xs"></div>
-
-
-<div class="clearfix visible-sm visible-xs"></div>
-
-</div>
-
 <script>
     // DOM Elements
 const tabs = document.querySelectorAll('.tab')
@@ -122,6 +109,11 @@ tabs.forEach(tab => {
         activateTab(tab.dataset.tab)
     })
 })
+
+function start(query = "tab1") {
+  document.getElementById(query).click();
+}
+start();
 activateTab(opentab);
 
 </script>
