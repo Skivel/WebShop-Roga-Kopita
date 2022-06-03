@@ -75,166 +75,6 @@
     <div class="container">
         <!-- row -->
         <div class="row">
-            <!-- banner -->
-            <div class="col-md-4 col-sm-6">
-                <a class="banner banner-1" href="#">
-                    <img src="{% static 'main/img/banner10.1.jpg' %}" alt="">
-                    <div class="banner-caption text-center">
-                        <h2 class="white-color">NEW COLLECTION</h2>
-                    </div>
-                </a>
-            </div>
-            <!-- /banner -->
-
-            <!-- banner -->
-            <div class="col-md-4 col-sm-6">
-                <a class="banner banner-1" href="#">
-                    <img src="{% static 'main/img/banner11.1.jpg' %}" alt="">
-                    <div class="banner-caption text-center">
-                        <h2 class="white-color">NEW COLLECTION</h2>
-                    </div>
-                </a>
-            </div>
-            <!-- /banner -->
-
-            <!-- banner -->
-            <div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3">
-                <a class="banner banner-1" href="#">
-                    <img src="{% static 'main/img/banner12.1.jpg' %}" alt="">
-                    <div class="banner-caption text-center">
-                        <h2 class="white-color">NEW COLLECTION</h2>
-                    </div>
-                </a>
-            </div>
-            <!-- /banner -->
-
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-</div>
-<!-- /section -->
-
-<!-- section -->
-<div class="section">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row">
-            <!-- section-title -->
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h2 class="title">Deals Of The Day</h2>
-                    <div class="pull-right">
-                        <div class="product-slick-dots-1 custom-dots"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- /section-title -->
-
-            <!-- banner -->
-            <div class="col-md-3 col-sm-6 col-xs-6">
-                <div class="banner banner-2">
-                    <img src="{% static 'main/img/banner14.jpg' %}" alt="">
-                    <div class="banner-caption">
-                        <h2 class="white-color">NEW<br>COLLECTION</h2>
-                        <button class="primary-btn">Shop Now</button>
-                    </div>
-                </div>
-            </div>
-            <!-- /banner -->
-
-            <!-- Product Slick -->
-            <div class="col-md-9 col-sm-6 col-xs-6">
-                <div class="row">
-                    <div id="product-slick-1" class="product-slick">
-                        <!-- Product Single -->
-                        {% if products %}
-                        {% for el in products %}
-                        <div class="product product-single">
-                            <div class="product-thumb">
-                                <div class="product-label">
-                                    <span>New</span>
-                                </div>
-                                <img src="{{ el.img.url }}" alt="">
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-price">{{ el.price }}</h3>
-                                <h2 class="product-name"><a href="#">{{ el.title }}</a></h2>
-                                <div class="product-btns">
-                                    <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to
-                                        Cart
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                        {% endif %}
-                        <!-- /Product Single -->
-                    </div>
-                </div>
-            </div>
-            <!-- /Product Slick -->
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-</div>
-<!-- /section -->
-
-<!-- section -->
-<div class="section section-grey">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row">
-            <!-- banner -->
-            <div class="col-md-8">
-                <div class="banner banner-1">
-                    <img src="{% static 'main/img/banner13.1.jpg' %}" alt="">
-                    <div class="banner-caption text-center">
-                        <h1 class="primary-color">HOT DEAL<br><span class="white-color font-weak">Up to 50% OFF</span>
-                        </h1>
-                        <button class="primary-btn">Shop Now</button>
-                    </div>
-                </div>
-            </div>
-            <!-- /banner -->
-
-            <!-- banner -->
-            <div class="col-md-4 col-sm-6">
-                <a class="banner banner-1" href="#">
-                    <img src="{% static 'main/img/banner11.1.jpg' %}" alt="">
-                    <div class="banner-caption text-center">
-                        <h2 class="white-color">NEW COLLECTION</h2>
-                    </div>
-                </a>
-            </div>
-            <!-- /banner -->
-
-            <!-- banner -->
-            <div class="col-md-4 col-sm-6">
-                <a class="banner banner-1" href="#">
-                    <img src="{% static 'main/img/banner12.1.jpg' %}" alt="">
-                    <div class="banner-caption text-center">
-                        <h2 class="white-color">NEW COLLECTION</h2>
-                    </div>
-                </a>
-            </div>
-            <!-- /banner -->
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-</div>
-<!-- /section -->
-
-<!-- section -->
-<div class="section">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row">
             <!-- section title -->
             <div class="col-md-12">
                 <div class="section-title">
@@ -264,4 +104,56 @@
     <!-- /container -->
 </div>
 <!-- /section -->
+
+<!-- section -->
+<div class="section section-grey">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- banner -->
+            <div class="col-md-8">
+                <div class="banner banner-1">
+                    <img src="{% static 'main/img/banner13.1.jpg' %}" alt="">
+                    <div class="banner-caption text-center">
+                        <h1 class="primary-color" style="background-color:black; opacity: 0.8;">УВАГА!<br><span class="white-color">5% З КОЖНОЇ ПОКУПКИ, ДОПОМОГА АРМІЇ</span>
+                        </h1>
+                        <button class="primary-btn">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /banner -->
+
+            <!-- banner -->
+            <div class="col-md-4 col-sm-6">
+                <div class="banner banner-1">
+                    <img src="{% static 'main/img/banner11.1.jpg' %}" alt="">
+                    <div class="banner-caption text-center">
+                        <h2 class="white-color" style="background-color:black; opacity: 0.6;">ОДЯГ ТА ВЗУТТЯ</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- /banner -->
+
+            <!-- banner -->
+            <div class="col-md-4 col-sm-6">
+                <div class="banner banner-1">
+                    <img src="{% static 'main/img/banner12.1.jpg' %}" alt="">
+                    <div class="banner-caption text-center">
+                        <h2 class="white-color" style="background-color:black; opacity: 0.8;">ТАКТИЧНЕ СПОРЯДЖЕННЯ</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- /banner -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /section -->
+
+<br>
+<br>
+<br>
+<br>
 {% endblock %}
