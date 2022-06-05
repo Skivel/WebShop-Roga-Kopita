@@ -1,4 +1,4 @@
-{% if el.vanish == False %}
+{% if el.vanish == True %}
 <div class="col-md-4 col-sm-6 col-xs-6">
     <div class="product product-single">
         <div class="product-thumb">
@@ -10,7 +10,7 @@
         </div>
         <div class="product-body">
             <h3 class="product-price">${{ el.price }}</h3>
-            <h2 class="product-name"><a href="#">{{ el.title }}</a></h2>
+            <h2 class="product-name"><a href="#">{{ el.name }}</a></h2>
             <div class="product-btns">
                 <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
                 </button>
