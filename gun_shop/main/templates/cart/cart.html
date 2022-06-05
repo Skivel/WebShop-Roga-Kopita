@@ -1,0 +1,47 @@
+{% load static %}
+
+<li class="header-cart dropdown default-dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+
+        <div class="header-btns-icon">
+            <i class="fa fa-shopping-cart"></i>
+            {% if item.quantity >= 1 %}
+            <span class="qty">{{ item.quantity }}</span>
+            {% endif %}
+        </div>
+        <strong class="text-uppercase">Корзина:</strong>
+        <br>
+        <span>
+            {% if item.quantity >= 1 %}
+            {{ item.total_price }}$
+            {% else %}
+            Пуста
+            {% endif %}
+        </span>
+    </a>
+    <div class="custom-menu">
+        <div id="shopping-cart">
+            {% for item in cart %}
+            {% with product=item.product %}
+            <div class="shopping-cart-list">
+                <div class="product product-widget">
+                    <div class="product-thumb">
+                        <img src="{{ product.img.url }}" alt="">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-price">${{ item.price }} <span class="qty">{{ item.quantity }}</span></h3>
+                        <h2 class="product-name"><a href="#">{{ product.name }}</a></h2>
+                    </div>
+                    <a class="cancel-btn" href="{% url 'cart:cart_remove' product_id %}"><i class="fa fa-trash"></i></a>
+                </div>
+            </div>
+            {% endwith %}
+            {% endfor %}
+            <div class="shopping-cart-btns">
+                <button class="main-btn">Корзина</button>
+                <button class="primary-btn">Купити <i class="fa fa-arrow-circle-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</li>
