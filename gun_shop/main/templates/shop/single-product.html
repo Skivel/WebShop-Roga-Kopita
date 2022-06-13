@@ -1,3 +1,4 @@
+{% load static %}
 {% if el.vanish == True %}
 <div class="col-md-4 col-sm-6 col-xs-6">
     <div class="product product-single">
@@ -6,16 +7,18 @@
                 <span style="background-color: #2d56fd; text-align: center; font-size:14px;">На ЗСУ</span>
                 <span class="sale" style="background-color: #e4c918; text-align: center; font-size:14px; color: black;">5%</span>
             </div>
-            <img src="{{ el.img.url }}" alt="">
+            <img src="{{ el.img.url }}">
         </div>
         <div class="product-body">
             <h3 class="product-price">${{ el.price }}</h3>
             <h2 class="product-name"><a href="#">{{ el.name }}</a></h2>
             <div class="product-btns">
-                <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
+                <button id="buy_product" class="primary-btn add-to-cart" data-product-id="{{ el.id }}" data-product-name="{{ el.name }}"><i class="fa fa-shopping-cart"></i> Додати у корзину
                 </button>
             </div>
         </div>
     </div>
 </div>
+
+
 {% endif %}

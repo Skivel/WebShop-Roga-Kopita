@@ -26,9 +26,23 @@
             <div id="tabcontent1" data-tab="1" class="tabcontent">
                 {% if products %}
                 {% for el in products %}
+                {% if el.group == "tourism" %}
                 <!-- Product Single -->
                 {% include 'shop/single-product.html' %}
                 <!-- /Product Single -->
+                {% elif el.group == "hunt" %}
+                <!-- Product Single -->
+                {% include 'shop/single-product.html' %}
+                <!-- /Product Single -->
+                {% elif el.group == "shoes" %}
+                <!-- Product Single -->
+                {% include 'shop/single-product.html' %}
+                <!-- /Product Single -->
+                {% elif el.group == "closes" %}
+                <!-- Product Single -->
+                {% include 'shop/single-product.html' %}
+                <!-- /Product Single -->
+                {% endif %}
                 {% endfor %}
                 {% endif %}
             </div>
@@ -114,7 +128,6 @@ function start(query = "tab1") {
   document.getElementById(query).click();
 }
 start();
-activateTab(opentab);
 
 </script>
 {% endblock %}

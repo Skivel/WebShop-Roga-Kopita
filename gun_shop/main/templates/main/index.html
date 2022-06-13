@@ -5,8 +5,28 @@
 
 {% block content %}
 {% include 'main/nav.html' %}
+<!-- section -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- section title -->
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h2 class="title">Новинки</h2>
+                </div>
+            </div>
+            <!-- section title -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /section -->
+
 <!-- HOME -->
-<div id="home" style="padding-top: 15px; margin-right: 15%;">
+<div id="home" style="padding-bottom: 40px; margin-right: 15%;">
     <!-- container -->
     <div class="container">
         <!-- home wrap -->
@@ -17,8 +37,6 @@
                 <div class="banner banner-1">
                     <img src="{% static 'main/img/home slick/banner01.jpg' %}" alt="">
                     <div class="banner-caption text-center">
-                        <br><br><br><br><br><br><br><br><br><br><br><br><br>
-                        <button class="primary-btn">ДЕТАЛІ</button>
                     </div>
                 </div>
                 <!-- /banner -->
@@ -27,8 +45,6 @@
                 <div class="banner banner-1">
                     <img src="{% static 'main/img/home slick/banner02.jpg' %}" alt="">
                     <div class="banner-caption">
-                        <br><br><br><br><br><br><br><br><br><br><br><br><br>
-                        <button class="primary-btn">ДЕТАЛІ</button>
                     </div>
                 </div>
                 <!-- /banner -->
@@ -37,8 +53,6 @@
                 <div class="banner banner-1">
                     <img src="{% static 'main/img/home slick/banner03.jpg' %}" alt="">
                     <div class="banner-caption">
-                        <br><br><br><br><br><br><br><br><br><br><br><br><br>
-                        <button class="primary-btn">ДЕТАЛІ</button>
                     </div>
                 </div>
                 <!-- /banner -->
@@ -46,8 +60,6 @@
                 <div class="banner banner-1">
                     <img src="{% static 'main/img/home slick/b.jpg' %}" alt="">
                     <div class="banner-caption">
-                        <br><br><br><br><br><br><br><br><br><br><br><br><br>
-                        <button class="primary-btn">ДЕТАЛІ</button>
                     </div>
                 </div>
                 <!-- /banner -->
@@ -55,8 +67,6 @@
                 <div class="banner banner-1">
                     <img src="{% static 'main/img/home slick/bestseller-ponownie-w-sprzedazy.jpg' %}" alt="">
                     <div class="banner-caption">
-                        <<br><br><br><br><br><br><br><br><br><br><br><br><br>
-                        <button class="primary-btn">ДЕТАЛІ</button>
                     </div>
                 </div>
                 <!-- /banner -->
@@ -68,42 +78,6 @@
     <!-- /container -->
 </div>
 <!-- /HOME -->
-
-<!-- section -->
-<div class="section">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row">
-            <!-- section title -->
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h2 class="title">Новини</h2>
-                </div>
-            </div>
-            <!-- section title -->
-        </div>
-        <!-- /row -->
-
-        <!-- row -->
-        <div class="row">
-            <!-- banner -->
-            <div class="col-md-3 col-sm-6 col-xs-6">
-                <div class="banner banner-2">
-                    <img src="{% static 'main/img/banner15.jpg' %}" alt="">
-                    <div class="banner-caption">
-                        <h2 class="white-color">NEW<br>COLLECTION</h2>
-                        <button class="primary-btn">Shop Now</button>
-                    </div>
-                </div>
-            </div>
-            <!-- /banner -->
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-</div>
-<!-- /section -->
 
 <!-- section -->
 <div class="section section-grey">
@@ -118,7 +92,6 @@
                     <div class="banner-caption text-center">
                         <h1 class="primary-color" style="background-color:black; opacity: 0.8;">УВАГА!<br><span class="white-color">5% З КОЖНОЇ ПОКУПКИ, ДОПОМОГА АРМІЇ</span>
                         </h1>
-                        <button class="primary-btn">Shop Now</button>
                     </div>
                 </div>
             </div>
@@ -129,7 +102,7 @@
                 <div class="banner banner-1">
                     <img src="{% static 'main/img/banner11.1.jpg' %}" alt="">
                     <div class="banner-caption text-center">
-                        <h2 class="white-color" style="background-color:black; opacity: 0.6;">ОДЯГ ТА ВЗУТТЯ</h2>
+                        <h2 class="white-color" style="background-color:black; opacity: 0.8;">ВЗУТТЯ</h2>
                     </div>
                 </div>
             </div>
@@ -147,13 +120,16 @@
             <!-- /banner -->
         </div>
         <!-- /row -->
+        <!--row-->
+        <div class="row" style="text-align:center;">
+            <h2>Це та багато іншого вже у магазині!</h2>
+            <hr>
+        </div>
+        <!--/row-->
     </div>
     <!-- /container -->
 </div>
 <!-- /section -->
 
-<br>
-<br>
-<br>
-<br>
+
 {% endblock %}
