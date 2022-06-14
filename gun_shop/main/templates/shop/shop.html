@@ -24,38 +24,28 @@
 
         <div class="content">
             <div id="tabcontent1" data-tab="1" class="tabcontent">
-                {% if products %}
-                {% for el in products %}
-                {% if el.group == "tourism" %}
-                <!-- Product Single -->
-                {% include 'shop/single-product.html' %}
-                <!-- /Product Single -->
-                {% elif el.group == "hunt" %}
-                <!-- Product Single -->
-                {% include 'shop/single-product.html' %}
-                <!-- /Product Single -->
-                {% elif el.group == "shoes" %}
-                <!-- Product Single -->
-                {% include 'shop/single-product.html' %}
-                <!-- /Product Single -->
-                {% elif el.group == "closes" %}
-                <!-- Product Single -->
-                {% include 'shop/single-product.html' %}
-                <!-- /Product Single -->
-                {% endif %}
-                {% endfor %}
-                {% endif %}
+                <div class="row">
+                    {% if products %}
+                    {% for el in products %}
+                    <!-- Product Single -->
+                    {% include 'shop/single-product.html' %}
+                    <!-- /Product Single -->
+                    {% endfor %}
+                    {% endif %}
+                </div>
             </div>
             <div id="tabcontent2" data-tab="2" class="tabcontent">
-                {% if products %}
-                {% for el in products %}
-                {% if el.group == "tourism" %}
-                <!-- Product Single -->
-                {% include 'shop/single-product.html' %}
-                <!-- /Product Single -->
-                {% endif %}
-                {% endfor %}
-                {% endif %}
+                <div class="row">
+                    {% if products %}
+                    {% for el in products %}
+                    {% if el.group == "tourism" %}
+                    <!-- Product Single -->
+                    {% include 'shop/single-product.html' %}
+                    <!-- /Product Single -->
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                </div>
             </div>
             <div id="tabcontent3" data-tab="3" class="tabcontent">
                 {% if products %}
@@ -128,6 +118,8 @@ function start(query = "tab1") {
   document.getElementById(query).click();
 }
 start();
+
+
 
 </script>
 {% endblock %}

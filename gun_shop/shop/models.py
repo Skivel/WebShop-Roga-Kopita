@@ -30,3 +30,18 @@ class Products(models.Model):
         verbose_name = "Товар"
         verbose_name_plural = "Товари"
         index_together = (('id', 'slug'), )
+
+
+class Cart(models.Model):
+    name = models.CharField('Назва товару', max_length=255, db_index=True)
+    price = models.DecimalField('Ціна товару', max_digits=10, decimal_places=2)
+    img = models.ImageField('Зображення', upload_to="static/shop/img/cart", blank=True)
+    quantity = models.IntegerField('Кількість')
+    total_price = models.DecimalField('Загальна ціна', max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Корзина"
+        verbose_name_plural = "Корзина"

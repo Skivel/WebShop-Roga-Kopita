@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Articles(models.Model):
-    title = models.CharField('Заголовок', max_length=50, default='Заголовок')
+    title = models.CharField('Заголовок', max_length=50)
     anons = models.CharField('Анонс', max_length=255)
     full_text = models.TextField('Текст поста')
     date = models.DateTimeField('Дата публікації')
