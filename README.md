@@ -4,7 +4,7 @@
 
 1. Download project: git clone https://github.com/Skivel/Roga-Kopita.git
 
-2. Open project in PyCharm or else IDA
+2. Open project in PyCharm or else IDE
 
 3. Setup personal settings
 
