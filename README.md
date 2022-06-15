@@ -1,6 +1,6 @@
 # Roga-Kopita
 
-<!-- //-- HOW TO INSTALL --// -->
+<<-- HOW TO INSTALL -->>
 
 1. Download project: git clone https://github.com/Skivel/Roga-Kopita.git
 
@@ -14,8 +14,8 @@
 
 5. Start project with comand line: "python manage.py runserver" or "python3 manage.py runserver"
 
-<!-- \\-- HOW TO INSTALL --\\ -->
+<<-- HOW TO INSTALL -->>
 
 
-<!-- //-- SETTINGS --// -->
+//-- SETTINGS --//
 ...
