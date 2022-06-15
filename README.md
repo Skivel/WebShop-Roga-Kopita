@@ -14,8 +14,8 @@
 
 5. Start project with comand line: "python manage.py runserver" or "python3 manage.py runserver"
 
-<<-- HOW TO INSTALL -->>
+//-- HOW TO INSTALL --//
 
 
-//-- SETTINGS --//
+<<-- SETTINGS -->>
 ...
