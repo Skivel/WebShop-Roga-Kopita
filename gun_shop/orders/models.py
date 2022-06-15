@@ -59,7 +59,7 @@ class Order(models.Model):
     fname = models.CharField("Ім'я", max_length=40)
     sname = models.CharField("Прізвище", max_length=40)
     mail = models.EmailField("E-mail")
-    citi = models.CharField("Вкажіть область", max_length=40, choices=CHOICE_CITI)
+    citi = models.CharField("Область", max_length=40, choices=CHOICE_CITI)
     address = models.CharField("Адрес", max_length=255)
 
     def __str__(self):
