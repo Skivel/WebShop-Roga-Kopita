@@ -1,0 +1,15 @@
+{% extends 'main/loyaut.html' %}
+{% load static %}
+
+{% block title %}Оформлення замовлення{% endblock %}
+
+{% block content %}
+<div align="center" style="padding-top:5%; padding-bottom: 10%">
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit" class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Оформити замовлення
+        </button>
+    </form>
+</div>
+{% endblock %}

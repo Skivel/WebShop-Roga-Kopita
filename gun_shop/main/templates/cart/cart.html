@@ -1,27 +1,25 @@
 {% load static %}
 {% if cart %}
-{% for item in cart %}
 <li class="header-cart dropdown default-dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 
         <div class="header-btns-icon">
             <i class="fa fa-shopping-cart"></i>
-
-            <span class="qty">{{ item.quantity }}</span>
-
+            <span class="qty">{{ 1 }}</span>
         </div>
         <strong class="text-uppercase">Корзина:</strong>
         <br>
         <span>
-            {{ item.total_price }}$
+            {{ 5.99 }}$
         </span>
     </a>
     <div class="custom-menu">
         <div id="shopping-cart">
+            {% for item in cart %}
             <div class="shopping-cart-list">
                 <div class="product product-widget">
                     <div class="product-thumb">
-                        <img src="{{ item.img.url }}" alt="">
+                        <img src="/static/shop/img/products/%D0%90%D0%BF%D1%82%D0%B5%D1%87%D0%BA%D0%B0.jpg" alt="">
                     </div>
                     <div class="product-body">
                         <h3 class="product-price">${{ item.price }} <span class="qty">1</span></h3>
@@ -30,12 +28,12 @@
                     <a class="cancel-btn" href="#"><i class="fa fa-trash"></i></a>
                 </div>
             </div>
+            {% endfor %}
             <div class="shopping-cart-btns" align="center">
-                <button class="primary-btn">Купити <i class="fa fa-arrow-circle-right"></i>
-                </button>
+                <a href="../order"><button class="primary-btn">Купити <i class="fa fa-arrow-circle-right"></i>
+                </button></a>
             </div>
         </div>
     </div>
 </li>
-{% endfor %}
 {% endif %}
