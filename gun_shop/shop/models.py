@@ -35,9 +35,9 @@ class Products(models.Model):
 class Cart(models.Model):
     name = models.CharField('Назва товару', max_length=255, db_index=True)
     price = models.DecimalField('Ціна товару', max_digits=10, decimal_places=2)
-    img = models.ImageField('Зображення', upload_to="static/shop/img/cart", blank=True)
+    img_url = models.CharField('Шлях зображення', max_length=255, blank=True)
     quantity = models.IntegerField('Кількість')
-    total_price = models.DecimalField('Загальна ціна', max_digits=10, decimal_places=2)
+    total_price = models.DecimalField('Загальна ціна', max_digits=10, decimal_places=2, blank=True)
 
     def __str__(self):
         return self.name

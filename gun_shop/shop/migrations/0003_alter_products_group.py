@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('shop', '0001_initial'),
+        ('shop', '0002_alter_products_group'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='products',
             name='group',
-            field=models.CharField(choices=[('tourism', 'Туризм'), ('shoes', 'Взуття'), ('hunt', 'Полювання'), ('closes', 'Одяг')], default='Other', max_length=20, verbose_name='Категорія'),
+            field=models.CharField(choices=[('tourism', 'Туризм'), ('hunt', 'Полювання'), ('shoes', 'Взуття'), ('closes', 'Одяг')], default='Other', max_length=20, verbose_name='Категорія'),
         ),
     ]

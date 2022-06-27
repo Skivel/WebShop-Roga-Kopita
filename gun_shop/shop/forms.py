@@ -1,8 +1,15 @@
-from django.forms import ModelForm
+from django import forms
 from .models import Cart
 
 
-class PostCart(ModelForm):
+class PostCart(forms.ModelForm):
     class Meta:
         model = Cart
-        fields = '__all__'
+        fields = {
+            'name',
+            'price',
+            'img_url',
+            'quantity',
+            'total_price'
+            }
+
